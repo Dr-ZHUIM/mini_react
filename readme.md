@@ -28,3 +28,11 @@ Fiber将渲染过程分为了几个优先级，每完成一个优先级的渲染
 
 而在现在，React 使用了 一个 scheduler package
 
+**fiber tree**
+
+![](./md_resources/fiber1.png)
+
+
+如右图所示，fiber树渲染dom的顺序为：child -> sibling -> parent
+
+以右图为例：root -> div -> h1 -> p -> a -> h1 -> h2 -> div -> root
