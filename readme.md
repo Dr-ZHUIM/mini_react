@@ -28,6 +28,13 @@ Fiber将渲染过程分为了几个优先级，每完成一个优先级的渲染
 
 而在现在，React 使用了 一个 scheduler package
 
+Fiber架构将整个过程分为渲染过程render和提交过程commit：  
+渲染过程最终会构建出一个fiber tree(处理数据)  
+提交过程用原生DOM 的API将fiber渲染出来(实际渲染)
+
+**render过程由于requestIdleCallback的存在，它是异步的**
+**commit过程是同步的**
+
 **fiber tree**
 
 ![](./md_resources/fiber1.png)
