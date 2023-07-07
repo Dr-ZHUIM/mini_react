@@ -1,13 +1,11 @@
-import { createElement,render,useState } from "./micro-react";
+import createElement from "./module/createElement";
+import render from "./module/render";
+// react element
+const element = createElement(
+  "div",
+  {id: "foo"},
+  createElement("a",null,"bar"),
+  createElement("b")
+)
 
-const Counter = () => {
-  const [count,setCount] = useState(0);
-  return createElement('h1',{onclick:()=>{setCount(prev => prev + 1)}},count)
-}
-
-const element = createElement(Counter)
-
-const container = document.querySelector('#root');
-
-render(element,container);
-
+render(element,document.getElementById("root"));
